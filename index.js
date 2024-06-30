@@ -3,10 +3,11 @@ const path = require('path'); // Add this line
 const app = express();
 const port = 3000;
 
-// Home route
+// Home Us route
 app.get('/', (req, res) => {
-  res.send('I am Ayush and this is my expressJs deployed through Github actions on Azure!');
-});
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  });
+
 
 // Serve static files from the "views" directory
 app.use(express.static(path.join(__dirname, 'views')));
